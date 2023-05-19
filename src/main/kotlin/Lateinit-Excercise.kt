@@ -2,20 +2,22 @@
 // so that an exception UninitializedPropertyAccessException was thrown.
 // Then fix the newly added code in 'main' so that no exception was thrown.
 
-class A {
-    private lateinit var prop: String
+private class Lateinit {
+    class A {
+        private lateinit var prop: String
 
-    fun setUp() {
-        prop = "value"
-    }
+        fun setUp() {
+            prop = "value"
+        }
 
-    fun display() {
-        println(prop)
+        fun display() {
+            println(prop)
+        }
     }
 }
 
 fun main() {
-    val a = A()
+    val a = Lateinit.A()
     // Uncomment below to avoid exception
     //a.setUp()
     a.display()
